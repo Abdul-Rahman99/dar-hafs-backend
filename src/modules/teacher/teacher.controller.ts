@@ -3,9 +3,10 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
+  ParseIntPipe,
+  Put,
 } from '@nestjs/common';
 import { TeacherService } from './teacher.service';
 import { CreateTeacherDto } from './dto/create-teacher.dto';
@@ -26,17 +27,20 @@ export class TeacherController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: number) {
+  findOne(@Param('id', ParseIntPipe) id: number) {
     return this.teacherService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: number, @Body() updateTeacherDto: UpdateTeacherDto) {
+  @Put(':id')
+  update(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() updateTeacherDto: UpdateTeacherDto,
+  ) {
     return this.teacherService.update(+id, updateTeacherDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: number) {
+  remove(@Param('id', ParseIntPipe) id: number) {
     return this.teacherService.remove(+id);
   }
 }

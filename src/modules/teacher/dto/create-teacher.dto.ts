@@ -14,10 +14,6 @@ export class CreateTeacherDto {
   yearsOfExperience: number;
 
   @IsNotEmpty()
-  @IsString()
-  firstName: string;
-
-  @IsNotEmpty()
   @IsNumber()
   salary: number;
 }
