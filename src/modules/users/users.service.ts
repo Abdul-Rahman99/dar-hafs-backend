@@ -5,7 +5,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { TransactionManagerService } from '../../shared/services/transaction-manager.service';
 import { ResponseHandler } from '../../helper/response.handler';
 import { UsersRepository } from './repositories/users.repository';
-import { UserRole } from 'src/constants/enum/roles.enum';
+import { UserRole } from '../../constants/enum/roles.enum';
 
 @Injectable()
 export class UsersService {

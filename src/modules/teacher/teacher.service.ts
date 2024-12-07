@@ -4,7 +4,7 @@ import { Teacher } from './entities/teacher.entity';
 import { CreateTeacherDto } from './dto/create-teacher.dto';
 import { UpdateTeacherDto } from './dto/update-teacher.dto';
 import { TransactionManagerService } from '../../shared/services/transaction-manager.service';
-import { ResponseHandler } from 'src/helper/response.handler';
+import { ResponseHandler } from '../../helper/response.handler';
 import { TeacherRepository } from './repositories/teacher.repository';
 
 @Injectable()
